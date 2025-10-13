@@ -98,6 +98,15 @@ const DetailsApp = () => {
                     </BarChart>
 
                 </ResponsiveContainer>
+            </div >
+
+            <div className='p-6 mt-10 rounded-2xl'>
+                <h1 className="text-lg font-semibold mb-4">
+                   Description 
+                </h1>
+                <p className='text-sm text-wrap font-semibold text-gray-400'>
+                    {singleApp.description}
+                </p>
             </div>
 
 
