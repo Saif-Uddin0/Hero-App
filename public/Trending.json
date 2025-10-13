@@ -1,0 +1,147 @@
+[
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png",
+    "title": "WhatsApp Messenger",
+    "companyName": "Meta Platforms Inc.",
+    "id": 1,
+    "description": "Fast, simple, and secure messaging app connecting people across the world.",
+    "size": 95,
+    "reviews": 12000000,
+    "ratingAvg": 4.3,
+    "downloads": 5000000000,
+    "ratings": [
+      { "name": "1 star", "count": 500000 },
+      { "name": "2 star", "count": 700000 },
+      { "name": "3 star", "count": 1000000 },
+      { "name": "4 star", "count": 3000000 },
+      { "name": "5 star", "count": 8000000 }
+    ]
+  },
+
+  {
+    "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/94/4d/49/944d4950-4c18-7b22-0ae7-fd3f116a0232/AppIcon_TikTok-0-0-1x_U007epad-0-1-0-0-85-220.png/1200x600wa.png",
+    "title": "TikTok",
+    "companyName": "ByteDance Ltd.",
+    "id": 2,
+    "description": "Create, share, and discover short videos with fun effects and music.",
+    "size": 150,
+    "reviews": 15000000,
+    "ratingAvg": 4.6,
+    "downloads": 3000000000,
+    "ratings": [
+      { "name": "1 star", "count": 700000 },
+      { "name": "2 star", "count": 500000 },
+      { "name": "3 star", "count": 900000 },
+      { "name": "4 star", "count": 4000000 },
+      { "name": "5 star", "count": 9000000 }
+    ]
+  },
+  {
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnpzW6N9MH_aHEg8fI2rfsn01VsN5i-u9tixIpjVybSCFNcHXttjuDoZOLLvH-FOiHzXI&usqp=CAU",
+    "title": "Instagram",
+    "companyName": "Meta Platforms Inc.",
+    "id": 3,
+    "description": "Share photos and videos with your friends and follow what they’re up to.",
+    "size": 120,
+    "reviews": 11000000,
+    "ratingAvg": 4.4,
+    "downloads": 4000000000,
+    "ratings": [
+      { "name": "1 star", "count": 600000 },
+      { "name": "2 star", "count": 800000 },
+      { "name": "3 star", "count": 1000000 },
+      { "name": "4 star", "count": 3500000 },
+      { "name": "5 star", "count": 7000000 }
+    ]
+  },
+  {
+    "image": "data:image/png;base64,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",
+    "title": "Telegram",
+    "companyName": "Telegram FZ-LLC",
+    "id": 4,
+    "description": "Cloud-based instant messaging app focusing on speed and security.",
+    "size": 85,
+    "reviews": 5000000,
+    "ratingAvg": 4.7,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 100000 },
+      { "name": "2 star", "count": 200000 },
+      { "name": "3 star", "count": 300000 },
+      { "name": "4 star", "count": 1200000 },
+      { "name": "5 star", "count": 3200000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/q3Bk0grY/download.png",
+    "title": "Snapchat",
+    "companyName": "Snap Inc.",
+    "id": 5,
+    "description": "Send photos and videos that disappear after they’re viewed.",
+    "size": 130,
+    "reviews": 7000000,
+    "ratingAvg": 4.2,
+    "downloads": 2000000000,
+    "ratings": [
+      { "name": "1 star", "count": 800000 },
+      { "name": "2 star", "count": 600000 },
+      { "name": "3 star", "count": 900000 },
+      { "name": "4 star", "count": 2000000 },
+      { "name": "5 star", "count": 2700000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/Pzg6xkyQ/download-1.png",
+    "title": "Netflix",
+    "companyName": "Netflix Inc.",
+    "id": 6,
+    "description": "Stream your favorite TV shows, movies, and exclusive content.",
+    "size": 190,
+    "reviews": 8000000,
+    "ratingAvg": 4.6,
+    "downloads": 1500000000,
+    "ratings": [
+      { "name": "1 star", "count": 400000 },
+      { "name": "2 star", "count": 300000 },
+      { "name": "3 star", "count": 600000 },
+      { "name": "4 star", "count": 2500000 },
+      { "name": "5 star", "count": 4200000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/60hdDmf3/download.jpg",
+    "title": "YouTube",
+    "companyName": "Google LLC",
+    "id": 7,
+    "description": "Watch, upload, and share videos across the globe.",
+    "size": 100,
+    "reviews": 25000000,
+    "ratingAvg": 4.5,
+    "downloads": 10000000000,
+    "ratings": [
+      { "name": "1 star", "count": 1000000 },
+      { "name": "2 star", "count": 1200000 },
+      { "name": "3 star", "count": 2000000 },
+      { "name": "4 star", "count": 7000000 },
+      { "name": "5 star", "count": 13000000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/QjnR7Cgp/download-4.png",
+    "title": "Duolingo",
+    "companyName": "Duolingo Inc.",
+    "id":8,
+    "description": "Learn languages for free with fun, bite-sized lessons.",
+    "size": 65,
+    "reviews": 7000000,
+    "ratingAvg": 4.8,
+    "downloads": 500000000,
+    "ratings": [
+      { "name": "1 star", "count": 150000 },
+      { "name": "2 star", "count": 200000 },
+      { "name": "3 star", "count": 300000 },
+      { "name": "4 star", "count": 1200000 },
+      { "name": "5 star", "count": 5150000 }
+    ]
+  }
+]
