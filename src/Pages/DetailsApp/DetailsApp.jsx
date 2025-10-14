@@ -5,6 +5,7 @@ import ratindImg from '../../assets//icon-ratings.png'
 import reviewImg from '../../assets/icon-review.png'
 
 import { useLoaderData, useParams } from 'react-router';
+import { addToDb } from '../../Utility/AddToDb';
 
 
 const DetailsApp = () => {
@@ -13,6 +14,11 @@ const DetailsApp = () => {
     const appId = parseFloat(id);
     const singleApp = data.find(app => app.id === appId)
 
+    const handleInstall =(id) =>{
+            
+            addToDb(id)
+            alert ('apps is install')
+    }
 
     const numbers = (num) => {
         if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
@@ -30,7 +36,7 @@ const DetailsApp = () => {
         return ratingData;
     })
 
-    console.log(chartData)
+    
 
     return (
         <div className='w-full p-6'>
@@ -72,7 +78,7 @@ const DetailsApp = () => {
                         </div>
                     </div>
 
-                    <button className="mt-4 hover:transition-transform hover:scale-105 duration-500  btn bg-purple-50 hover:bg-purple-200  font-medium px-4 py-2 rounded-lg w-fit ">
+                    <button onClick={() => handleInstall(id)} className="mt-4 hover:transition-transform hover:scale-105 duration-500  btn bg-purple-50 hover:bg-purple-200  font-medium px-4 py-2 rounded-lg w-fit ">
                         <span className='text-sm font-semibold  bg-gradient-to-r from-[#632EE3] to-[#8e62e0] bg-clip-text text-transparent'>Install Now ({singleApp.size} MB)</span>
                     </button>
                 </div>

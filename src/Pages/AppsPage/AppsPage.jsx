@@ -44,7 +44,7 @@ const AppsPage = () => {
                                 filterApps.map(singleApp => <AppsPageShow key={singleApp.id} singleApp={singleApp}></AppsPageShow>)
                             }
                         </div>) : (
-                            <div className='flex flex-col justify-center items-center'>
+                            <div className='flex flex-col justify-center items-center mt-10'>
                                 <img src={noImg} alt="" />
                                 <div className='flex flex-col justify-center items-center text-center space-y-3 mt-3'>
                                     <h4 className='text-4xl font-semibold '>OPPS!! APP NOT FOUND</h4>

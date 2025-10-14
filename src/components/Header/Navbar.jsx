@@ -5,7 +5,7 @@ import { Github } from 'lucide-react';
 
 const Navbar = () => {
     return (
-        <div className='w-full bg-base-100 shadow-sm'>
+        <div className='w-full bg-base-100 shadow-sm '>
             <div className="navbar  container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -14,10 +14,10 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex="-1"
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <NavLink className={({isActive}) => isActive ? "text-purple-600 font-bold" : "text-gray-700"} to={'/'}><li >Home</li></NavLink>
-                            <NavLink className={({isActive}) => isActive ? "text-purple-600 font-bold" : "text-gray-700"} to={'/apps'}><li >App</li></NavLink>
-                            <NavLink className={({isActive}) => isActive ? "text-purple-600 font-bold" : "text-gray-700"} to={'/install'} ><li >Installation</li></NavLink>
+                            className="menu menu-sm  dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <NavLink className={({isActive}) => isActive ? "text-purple-600  font-bold" : "text-gray-700 font-semibold text-sm hover:underline hover:text-black"} to={'/'}><li >Home</li></NavLink>
+                            <NavLink className={({isActive}) => isActive ? "text-purple-600  font-bold" : "text-gray-700 font-semibold text-sm hover:underline hover:text-black"} to={'/apps'}><li >App</li></NavLink>
+                            <NavLink className={({isActive}) => isActive ? "text-purple-600  font-bold" : "text-gray-700 font-semibold text-sm hover:underline hover:text-black"} to={'/install'} ><li >Installation</li></NavLink>
                             
                         </ul>
                     </div>
@@ -32,9 +32,9 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden md:flex">
                     <ul className="menu menu-horizontal px-1 gap-10">
-                        <NavLink className={({isActive}) => isActive ? "text-purple-600 font-bold" : "text-gray-700"} to={'/'}><li >Home</li></NavLink>
-                        <NavLink className={({isActive}) => isActive ? "text-purple-600 font-bold" : "text-gray-700"} to={'/apps'}><li >App</li></NavLink>
-                        <NavLink className={({isActive}) => isActive ? "text-purple-600 font-bold" : "text-gray-700"} to={'/install'}><li >Installation</li></NavLink>
+                        <NavLink className={({isActive}) => isActive ? "text-purple-600 font-bold" : "text-gray-700 font-semibold text-sm hover:underline hover:text-black  "} to={'/'}><li >Home</li></NavLink>
+                        <NavLink className={({isActive}) => isActive ? "text-purple-600  font-bold" : "text-gray-700 font-semibold text-sm hover:underline hover:text-black "} to={'/apps'}><li >App</li></NavLink>
+                        <NavLink className={({isActive}) => isActive ? "text-purple-600  font-bold" : "text-gray-700 font-semibold text-sm hover:underline hover:text-black "} to={'/install'}><li >Installation</li></NavLink>
                     </ul>
                 </div>
 
