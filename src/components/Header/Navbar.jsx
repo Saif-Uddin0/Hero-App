@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import Img from '../../assets/logo.png'
 import { Github } from 'lucide-react';
 
@@ -21,12 +21,14 @@ const Navbar = () => {
                             
                         </ul>
                     </div>
+                    <Link to={'/'}>
                     <div className='flex items-center justify-center gap-1'>
                         <img
                             className='w-7'
                             src={Img} alt="" />
                         <h2 className='text-xl font-bold bg-gradient-to-r from-[#632EE3] to-yellow-600 bg-clip-text text-transparent'>HERO.IO</h2>
                     </div>
+                    </Link>
 
 
                 </div>
