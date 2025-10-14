@@ -23,6 +23,6 @@ export const addToDb = (id) =>{
 
 export const removeAppFromDb = (id) => {
     const storedApps = getStoreApp(); 
-    const updatedStoredApps = storedApps.filter(appid => appid !== id.toString()); 
+    const updatedStoredApps = storedApps.filter(appid => appid !== id); 
     localStorage.setItem("installlist", JSON.stringify(updatedStoredApps)); 
 };

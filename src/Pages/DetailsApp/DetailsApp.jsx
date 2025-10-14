@@ -1,11 +1,11 @@
-import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip,CartesianGrid, ResponsiveContainer } from 'recharts';
+import React, { useEffect, useState } from 'react';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 import downlodImg from '../../assets/icon-downloads.png'
 import ratindImg from '../../assets//icon-ratings.png'
 import reviewImg from '../../assets/icon-review.png'
 
 import { useLoaderData, useParams } from 'react-router';
-import { addToDb } from '../../Utility/AddToDb';
+import { addToDb, getStoreApp } from '../../Utility/AddToDb';
 
 
 const DetailsApp = () => {
@@ -14,12 +14,29 @@ const DetailsApp = () => {
     const appId = parseFloat(id);
     const singleApp = data.find(app => app.id === appId)
 
-    const handleInstall =(id) =>{
-            
-            addToDb(id)
-            alert ('apps is install')
-    }
+    const [disable, setDisable] = useState(false);
 
+    useEffect(() => {
+    const stored = getStoreApp();
+    
+    setDisable(stored.includes(appId.toString()));
+
+    const handleChageS = () => {
+        const updated = getStoreApp();
+        setDisable(updated.includes(appId.toString()));
+    };
+
+    window.addEventListener("storage", handleChageS);
+    return () => window.removeEventListener("storage", handleChageS);
+}, [appId]);
+
+const handleInstall = (id) => {
+    addToDb(id);
+    setDisable(true);
+    alert("App is installed");
+};
+
+    
     const numbers = (num) => {
         if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
         if (num >= 1000) return (num / 1000).toFixed(0) + "K";
@@ -36,7 +53,7 @@ const DetailsApp = () => {
         return ratingData;
     })
 
-    
+
 
     return (
         <div className='w-full p-6'>
@@ -78,8 +95,10 @@ const DetailsApp = () => {
                         </div>
                     </div>
 
-                    <button onClick={() => handleInstall(id)} className="mt-4 hover:transition-transform hover:scale-105 duration-500  btn bg-purple-50 hover:bg-purple-200  font-medium px-4 py-2 rounded-lg w-fit ">
-                        <span className='text-sm font-semibold  bg-gradient-to-r from-[#632EE3] to-[#8e62e0] bg-clip-text text-transparent'>Install Now ({singleApp.size} MB)</span>
+                    <button disabled={disable} onClick={() => handleInstall(id)} className={`mt-4 btn  font-medium px-4 py-2 rounded-lg w-fit ${disable ? "bg-gray-800 cursor-not-allowed text-gray-600" : "hover:transition-transform hover:scale-105 duration-500  bg-purple-50 hover:bg-purple-200"}`}>
+                        <span className='text-sm font-semibold bg-gradient-to-r from-[#632EE3] to-[#8e62e0] bg-clip-text text-transparent'>
+                            {disable ? "Installed" : `Install Now (${singleApp.size} MB)`}
+                        </span>
                     </button>
                 </div>
             </div>
@@ -98,9 +117,9 @@ const DetailsApp = () => {
                         <XAxis type='number'></XAxis>
                         <YAxis dataKey={"name"} type='category'></YAxis>
                         <Tooltip></Tooltip>
-                            
-                            <Bar dataKey={"count"} fill='#8884d8'></Bar>
-                        
+
+                        <Bar dataKey={"count"} fill='#8884d8'></Bar>
+
                     </BarChart>
 
                 </ResponsiveContainer>
@@ -108,7 +127,7 @@ const DetailsApp = () => {
 
             <div className='p-6 mt-10 rounded-2xl'>
                 <h1 className="text-lg font-semibold mb-4">
-                   Description 
+                    Description
                 </h1>
                 <p className='text-sm text-wrap font-semibold text-gray-400'>
                     {singleApp.description}
