@@ -3,16 +3,17 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContaine
 import downlodImg from '../../assets/icon-downloads.png'
 import ratindImg from '../../assets//icon-ratings.png'
 import reviewImg from '../../assets/icon-review.png'
-
-import { useLoaderData, useParams } from 'react-router';
+import { useLoaderData, useNavigate, useParams } from 'react-router';
 import { addToDb, getStoreApp } from '../../Utility/AddToDb';
+import { toast } from 'react-toastify';
 
 
 const DetailsApp = () => {
     const { id } = useParams()
     const data = useLoaderData();
     const appId = parseFloat(id);
-    const singleApp = data.find(app => app.id === appId)
+    const singleApp = data.find(app => app.id === appId) || null; // ✅ Check for null
+    const previousPage = useNavigate();
 
     const [disable, setDisable] = useState(false);
 
@@ -33,7 +34,7 @@ const DetailsApp = () => {
 const handleInstall = (id) => {
     addToDb(id);
     setDisable(true);
-    alert("App is installed");
+    toast.success("✅ Successfully Installed!");
 };
 
     
@@ -42,6 +43,25 @@ const handleInstall = (id) => {
         if (num >= 1000) return (num / 1000).toFixed(0) + "K";
         return num;
     };
+
+
+     if (!singleApp) {
+        return (
+            <div className="flex flex-col justify-center items-center mt-20">
+                
+                <h2 className="text-3xl font-semibold mt-4">App Not Found</h2>
+                <p className="text-gray-500 text-sm mt-2 text-center">
+                    The app you are looking for does not exist or has been removed.
+                </p>
+                <button
+                    onClick={() => previousPage(-2)}
+                    className='btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white mt-4'
+                >
+                    Go Back
+                </button>
+            </div>
+        );
+    }
 
 
 
@@ -136,7 +156,10 @@ const handleInstall = (id) => {
 
 
         </div>
+
+        
     );
+    
 };
 
 export default DetailsApp;

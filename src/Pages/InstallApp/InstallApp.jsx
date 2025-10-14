@@ -3,8 +3,11 @@ import { Link, useLoaderData, useNavigate } from 'react-router';
 import { getStoreApp, removeAppFromDb } from '../../Utility/AddToDb';
 import InsallAppsShow from '../InsallAppsShow/InsallAppsShow';
 import { ArrowBigDownDash } from 'lucide-react';
+import { toast } from 'react-toastify';
 
 const InstallApp = () => {
+
+    const [sort , setSort] = useState('');
 
     const [installList, setInstalList] = useState([]);
     const data = useLoaderData();
@@ -25,11 +28,24 @@ const InstallApp = () => {
 
 
     const handleUnistall = (id) => {
-        alert('apps is unistalled')
+        toast('apps is unistalled')
         removeAppFromDb(id.toString())
         loadInstallApp();
 
         window.dispatchEvent(new Event("storage"));
+    }
+
+
+    const handleSort =(type) => {
+            setSort(type)
+            if (type === 'low-High'){
+                const sortedByLowToH = [...installList].sort((a,b) => a.downloads - b.downloads);
+                setInstalList(sortedByLowToH)
+            }
+            if( type === 'High-low'){
+                const sortedByHtoL = [...installList].sort((a,b) => b.downloads - a.downloads);
+                setInstalList(sortedByHtoL)
+            }
     }
 
 
@@ -52,10 +68,10 @@ const InstallApp = () => {
                             <div className='flex justify-between items-center p-5'>
                                 <h2>({installList.length}) Apps Found</h2>
                                 <div className="dropdown dropdown-center">
-                                    <div tabIndex={0} role="button" className="btn m-1">sort by <ArrowBigDownDash className='w-4 h-5'></ArrowBigDownDash></div>
-                                    <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1  p-2 shadow-sm">
-                                        <li><a>Item 1</a></li>
-                                        <li><a>Item 2</a></li>
+                                    <div tabIndex={0} role="button" className="btn m-1">sort by:{sort? sort:''}<ArrowBigDownDash className='w-4 h-5'></ArrowBigDownDash></div>
+                                    <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box  flex flex-row   shadow-sm">
+                                        <li><a onClick={() =>handleSort('low-High')}>low-High</a></li>
+                                        <li><a onClick={() =>handleSort('High-low')}>High-low</a></li>
                                     </ul>
                                 </div>
                             </div>
