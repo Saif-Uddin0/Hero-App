@@ -4,11 +4,9 @@ Hero App is a modern and responsive web application that provides users with an 
 This project is built using React (Vite) and styled with Tailwind CSS.
 It focuses on practicing key React concepts like components, routing, animations, and responsive layout design.
 
---
 🖼️ Screenshot
 
-<img <img src="https://github.com/Saif-Uddin0/Hero-App/blob/main/Hero,io.jpg?raw=true /> />
-
+<img src="https://github.com/Saif-Uddin0/Hero-App/blob/main/Hero,io.jpg?raw=true"" />
 
 
 
