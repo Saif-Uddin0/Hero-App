@@ -7,7 +7,7 @@ It focuses on practicing key React concepts like components, routing, animations
 --
 🖼️ Screenshot
 
-<img src="<img src="https://github.com/Saif-Uddin0/Hero-App/blob/main/Hero,io.jpg?raw=true />" />
+<img <img src="https://github.com/Saif-Uddin0/Hero-App/blob/main/Hero,io.jpg?raw=true /> />
 
 
 
